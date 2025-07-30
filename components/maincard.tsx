@@ -1,8 +1,10 @@
 "use client";
 
-import { Card, CardBody, CardHeader } from "@heroui/react";
+import { Card, CardBody, CardFooter, CardHeader } from "@heroui/react";
 import Image from "next/image";
-import mainimage from "../public/pic8.png";
+import mainimage from "../public/pic10.webp";
+import processimage from "../public/pic11.png";
+// The above import for processimage is not used in this component, but it can be used
 import { use } from "react";
 
 export default function MainCard() {
@@ -34,6 +36,12 @@ export default function MainCard() {
           />
         </div>
       </CardBody>
+      <CardFooter className="bg-slate-50">
+          <Image
+            src={processimage}
+            alt="Process image"
+          />
+       </CardFooter> 
     </Card>
   );
 }
