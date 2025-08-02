@@ -9,24 +9,24 @@ import MainCard from "@/components/maincard";
 export default function Home() {
   return (
     <div>
-  <div>
-  <MainCard />
-  </div>
-  <div>
-    <DigitizationCard />
-  </div>
-  <div>
-    <CloudInfrustructureCard />
-  </div>
-  <div>
-    <BusinessProcessCard />
-  </div>
-  <div>
-    <IntelligentDocumentProcessingCard />
-  </div>
-  <div>
-    <ContactFormCard />
-  </div>
+      <div>
+        <MainCard />
+      </div>
+      <div>
+        <DigitizationCard />
+      </div>
+      <div>
+        <CloudInfrustructureCard />
+      </div>
+      <div>
+        <BusinessProcessCard />
+      </div>
+      <div>
+        <IntelligentDocumentProcessingCard />
+      </div>
+      <div>
+        <ContactFormCard />
+      </div>
     </div>
   );
 }
