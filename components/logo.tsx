@@ -6,7 +6,7 @@ export default function Logo() {
         <Image
             src={logopic}
             alt="Silvabak Cloud Tech Logo"
-            className="size-[40px] rounded-full"
+            className="size-[30px] rounded-full"
         />
     );
 }

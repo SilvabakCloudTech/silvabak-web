@@ -1,8 +1,9 @@
 import CloudInfrustructureCard from "@/components/cloudinfrustructurecard";
+import ContactSection from "@/components/contactsection";
+import Footer from "@/components/footer";
 import { HeroSection } from "@/components/herosection";
-import { Navbar } from "@/components/navbar";
+import NavbarComponent from "@/components/navbar";
 import ServiceCard from "@/components/services";
-import Services from "@/components/services";
 
 const services = [
   {
@@ -70,13 +71,18 @@ const services = [
 export default function Home() {
   return (
         <div className="min-h-screen">
+          <NavbarComponent />
+          <main>
         <HeroSection />
         <h1 className="text-3xl font-bold text-center mb-8 text-foreground">Our Services</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div id="services" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
       </div>
+      <ContactSection />
+          </main>
+          <Footer />
     </div>
   );
 }

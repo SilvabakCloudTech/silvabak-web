@@ -7,8 +7,6 @@ import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
-import Logo from "@/components/logo";
 
 export const metadata: Metadata = {
   title: {
@@ -52,9 +50,6 @@ export default function RootLayout({
           }}
         >
           <div>
-            <div className="fixed top-2 left-2 right-0 z-50">
-            <Logo />
-            </div>
             <main className="h-full min-h-screen">
               {children}
             </main>
