@@ -1,8 +1,15 @@
-import CloudInfrustructureCard from "@/components/cloudinfrustructurecard";
-import { HeroSection } from "@/components/herosection";
-import { Navbar } from "@/components/navbar";
-import ServiceCard from "@/components/services";
-import Services from "@/components/services";
+"use client";
+import React from 'react';
+import { Card, CardBody, CardHeader, CardFooter, Button, Tooltip } from "@heroui/react";
+import { Icon } from "@iconify/react";
+
+interface ServiceCardProps {
+  title: string;
+  icon: string;
+  description: string;
+  features: string[];
+  benefits: string[];
+}
 
 const services = [
   {
@@ -67,16 +74,40 @@ const services = [
   }
 ];
 
-export default function Home() {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, icon, description, features, benefits }) => {
   return (
-        <div className="min-h-screen">
-        <HeroSection />
-        <h1 className="text-3xl font-bold text-center mb-8 text-foreground">Our Services</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
-      </div>
-    </div>
+    <Card 
+      className="bg-content1 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+      isHoverable
+    >
+      <CardHeader className="flex gap-3">
+        <Icon icon={icon} className="text-primary text-3xl" />
+        <div className="flex flex-col">
+          <p className="text-md font-semibold">{title}</p>
+          <p className="text-small text-default-500">{description}</p>
+        </div>
+      </CardHeader>
+      <CardBody>
+        <h4 className="font-semibold mb-2 text-sm">Key Features:</h4>
+        <ul className="list-none space-y-1">
+          {features.map((feature, index) => (
+            <li key={index} className="text-sm flex items-center">
+              <Icon icon="lucide:check" className="text-success mr-2" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </CardBody>
+      <CardFooter>
+        <Tooltip content="View detailed benefits and learn more">
+          <Button color="primary" variant="flat" fullWidth>
+            Learn More
+          </Button>
+        </Tooltip>
+      </CardFooter>
+    </Card>
   );
-}
+};
+
+export { services };
+export default ServiceCard;

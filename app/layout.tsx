@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import Logo from "@/components/logo";
 
 export const metadata: Metadata = {
   title: {
@@ -50,21 +51,13 @@ export default function RootLayout({
             enableSystem: true,
           }}
         >
-          <div className="dark:bg-slate-950 relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl flex-grow">
+          <div>
+            <div className="fixed top-2 left-2 right-0 z-50">
+            <Logo />
+            </div>
+            <main className="h-full min-h-screen">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://www.silvabak.co.za"
-                title="silvabak.co.za homepage"
-              ></Link>
-              <span className="text-default-600">Powered by </span>
-              <p className="text-primary">Silvabak Cloud Tech</p>
-            </footer>
           </div>
         </Providers>
       </body>
